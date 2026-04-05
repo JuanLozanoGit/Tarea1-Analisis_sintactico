@@ -1,17 +1,19 @@
 # Tarea1-Analisis_sintactico
 
-Implementación de un analizador sintáctico para la gramática de expresiones simples definida en clase. El programa transforma cadenas de entrada en representaciones gráficas de Árboles de Sintaxis Abstracta (AST).
+Analizador sintáctico para gramáticas de expresiones simples. Procesa múltiples cadenas desde un archivo de texto y genera los AST correspondientes en formato imagen.
 
 ## Requisitos
 - Python 3.x
-- Graphviz (binarios del sistema)
-- Librerías: `pip install -r requirements.txt`
+- Graphviz
+- Librerías: `pip install lark pydot`
 
 ## Uso
-Ejecutar el script pasando la expresión entre comillas:
-`python analizador.py "2 + 3 * 4"`
+1. Colocar las expresiones en `pruebas.txt` (una por línea).
+2. Ejecutar:
+   `python analizador.py`
 
-Si se ejecuta sin argumentos, procesará automáticamente las cadenas de ejemplo de la guía.
+También permite especificar un archivo distinto:
+`python analizador.py mis_cadenas.txt`
 
-## Notas Técnicas
-Se utiliza el parser Earley de la librería Lark para resolver la recursividad por la izquierda. Las reglas con prefijo '?' eliminan nodos de derivación simple para producir un AST limpio.
+## Funcionamiento
+El script lee cada línea, reemplaza paréntesis por tokens `pari`/`pard` y utiliza el motor Earley de Lark para generar una estructura jerárquica libre de nodos redundantes (AST).
