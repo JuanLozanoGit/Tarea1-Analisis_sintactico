@@ -1,15 +1,17 @@
 # Tarea1-Analisis_sintactico
 
-## Introducción
-Este proyecto implementa un analizador sintáctico basado en la gramática de expresiones simples definida en clase. El objetivo es procesar cadenas de entrada y representar su jerarquía mediante un AST, diferenciándolo de un árbol de análisis sintáctico estándar al simplificar nodos redundantes.
+Implementación de un analizador sintáctico para la gramática de expresiones simples definida en clase. El programa transforma cadenas de entrada en representaciones gráficas de Árboles de Sintaxis Abstracta (AST).
 
-## Especificación de la Gramática
-La gramática implementada sigue las reglas de precedencia estándar:
-* **E**: Expresiones de suma y resta (Menor precedencia).
-* **T**: Términos de multiplicación y división.
-* **F**: Factores (Identificadores, números o expresiones agrupadas).
+## Requisitos
+- Python 3.x
+- Graphviz (binarios del sistema)
+- Librerías: `pip install -r requirements.txt`
 
-## Requisitos Técnicos
-Para ejecutar el generador, se requiere Python 3.x y las siguientes dependencias:
-```bash
-pip install lark pydot
+## Uso
+Ejecutar el script pasando la expresión entre comillas:
+`python analizador.py "2 + 3 * 4"`
+
+Si se ejecuta sin argumentos, procesará automáticamente las cadenas de ejemplo de la guía.
+
+## Notas Técnicas
+Se utiliza el parser Earley de la librería Lark para resolver la recursividad por la izquierda. Las reglas con prefijo '?' eliminan nodos de derivación simple para producir un AST limpio.
