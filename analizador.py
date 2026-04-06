@@ -2,7 +2,6 @@ import sys
 import os
 from lark import Lark, tree
 
-# Gramatica basada en la diapositiva de la Sergio Arboleda
 grammar = """
     ?start: e
 
@@ -52,6 +51,6 @@ def procesar_archivo(ruta_txt):
             print(f"Error en linea {i+1} ({cadena}): {e}")
 
 if __name__ == "__main__":
-    # Si no se pasa archivo por argumento, busca 'pruebas.txt' por defecto
+    # Lineas de codigo para aceptar archivos
     archivo = sys.argv[1] if len(sys.argv) > 1 else "pruebas.txt"
     procesar_archivo(archivo)
