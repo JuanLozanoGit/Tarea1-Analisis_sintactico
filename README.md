@@ -2,7 +2,7 @@
 
 ## Requisitos del Sistema:
 
-1.  **Python 3.10+**
+1.  **Python 3.1**
 2.  **Graphviz** (Motor de dibujo del sistema):
     * En Linux: `sudo apt update && sudo apt install graphviz -y`
 
