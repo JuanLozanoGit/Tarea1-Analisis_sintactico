@@ -4,8 +4,7 @@
 
 1.  **Python 3.10+**
 2.  **Graphviz** (Motor de dibujo del sistema):
-    * En Linux (Kali/Ubuntu): `sudo apt update && sudo apt install graphviz -y`
-    * En Windows: Descargar e instalar desde [graphviz.org](https://graphviz.org/download/) (Marcar "Add to PATH").
+    * En Linux: `sudo apt update && sudo apt install graphviz -y`
 
 ## Instalación de Librerías:
 
